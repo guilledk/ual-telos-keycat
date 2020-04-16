@@ -1,8 +1,12 @@
 {
-  "name": "@smontero/ual-keycat",
-  "version": "1.0.21",
+  "name": "@telosnetwork/ual-telos-keycat",
+  "version": "1.0.23",
   "description": "",
   "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/telosnetwork/ual-telos-keycat"
+  },
   "scripts": {
     "build": "babel src -d dist",
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -12,7 +16,7 @@
     "name": "Sebastian Montero"
   },
   "dependencies": {
-    "@smontero/keycatjs": "^0.9.4",
+    "@telosnetwork/telos-keycatjs": "git://github.com/telosnetwork/telos-keycatjs.git#5670720",
     "eosjs": "^20.0.0-56c14a9.0",
     "text-encoding": "^0.7.0",
     "universal-authenticator-library": "0.1.0"

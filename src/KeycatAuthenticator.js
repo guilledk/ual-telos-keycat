@@ -1,12 +1,11 @@
 import { Authenticator, UALError, UALErrorType } from 'universal-authenticator-library';
-import { Keycat } from '@smontero/keycatjs';
+import { Keycat } from '@telosnetwork/telos-keycatjs';
 import KeycatLogo from './KeycatLogo';
 import KeycatUser from './KeycatUser';
 
 const chainMap = {
-    'e70aaab8997e1dfce58fbfac80cbbb8fecec7b99cf982a9444273cbc64c41473': 'eos-jungle',
-    'aca376f206b8fc25a6ed44dbdc66547c36c6c33e3a119ffbeaef943642f0e906': 'eos',
     '4667b205c6838ef70ff7988f6e8257e8be0e1284a2f59699054a018f743b1d11': 'telos',
+    '1eaa0824707c8c16bd25145493bf062aecddfeb56c736f6ba6397f3195f33c9f': 'telos-testnet',
 };
 
 class KeycatAuthenticator extends Authenticator {
@@ -22,7 +21,8 @@ class KeycatAuthenticator extends Authenticator {
     _getKeycatMap(chains) {
         const keycatMap = {};
         for (const chain of chains) {
-            const { chainId, rpcEndpoints } = chain;
+            const { chainId, rpcEndpoints, origin } = chain;
+            console.log('ual-telos-keycat chain is: ', chain);
             const name = chainMap[chainId];
             if (name) {
                 const nodes = [];
@@ -34,6 +34,7 @@ class KeycatAuthenticator extends Authenticator {
                     blockchain: {
                         name,
                         nodes,
+                        origin,
                     },
                 });
             }
@@ -91,7 +92,7 @@ class KeycatAuthenticator extends Authenticator {
 
     getStyle() {
         return {
-            // An icon displayed to app users when selecting their authentication method 
+            // An icon displayed to app users when selecting their authentication method
             icon: KeycatLogo,
             // Name displayed to app users
             text: 'Keycat',
@@ -151,7 +152,7 @@ class KeycatAuthenticator extends Authenticator {
     }
 
     /**
-     * Logs the user out of the dapp. This will be strongly dependent on each 
+     * Logs the user out of the dapp. This will be strongly dependent on each
      * Authenticator app's patterns.
      */
     async logout() {
