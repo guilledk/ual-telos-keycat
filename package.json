@@ -12,7 +12,7 @@
     "name": "Sebastian Montero"
   },
   "dependencies": {
-    "@smontero/keycatjs": "^0.9.4",
+    "@telos-network/telos-keycatjs": "git://github.com/telosnetwork/telos-keycatjs.git",
     "eosjs": "^20.0.0-56c14a9.0",
     "text-encoding": "^0.7.0",
     "universal-authenticator-library": "0.1.0"
