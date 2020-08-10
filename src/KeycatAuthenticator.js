@@ -132,7 +132,6 @@ class KeycatAuthenticator extends Authenticator {
      * @param accountName  The account name of the user for Authenticators that do not store accounts (optional)
      */
     async login() {
-        try {
             const { accountName, permission, publicKey } = await this.keycat.signin();
             return [
                 new KeycatUser({
@@ -144,9 +143,7 @@ class KeycatAuthenticator extends Authenticator {
 
                 }),
             ];
-        } catch (err) {
-            throw new UALError(err.messsage, UALErrorType.Login, err);
-        }
+
     }
 
     /**
