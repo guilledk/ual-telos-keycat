@@ -1,5 +1,5 @@
 import { Authenticator, UALError, UALErrorType } from 'universal-authenticator-library';
-import { Keycat } from '@telos-network/telos-keycatjs';
+import { Keycat } from '@telosnetwork/telos-keycatjs';
 import KeycatLogo from './KeycatLogo';
 import KeycatUser from './KeycatUser';
 

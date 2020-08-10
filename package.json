@@ -1,5 +1,5 @@
 {
-  "name": "@smontero/ual-keycat",
+  "name": "@telosnetwork/ual-telos-keycat",
   "version": "1.0.23",
   "description": "",
   "main": "index.js",
@@ -12,7 +12,7 @@
     "name": "Sebastian Montero"
   },
   "dependencies": {
-    "@telos-network/telos-keycatjs": "git://github.com/telosnetwork/telos-keycatjs.git",
+    "@telosnetwork/telos-keycatjs": "git://github.com/telosnetwork/telos-keycatjs.git",
     "eosjs": "^20.0.0-56c14a9.0",
     "text-encoding": "^0.7.0",
     "universal-authenticator-library": "0.1.0"
