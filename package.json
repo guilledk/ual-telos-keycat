@@ -16,7 +16,7 @@
     "name": "Sebastian Montero"
   },
   "dependencies": {
-    "@telosnetwork/telos-keycatjs": "git://github.com/telosnetwork/telos-keycatjs.git#kylan/before-major-changes",
+    "@telosnetwork/telos-keycatjs": "git://github.com/telosnetwork/telos-keycatjs.git#5670720",
     "eosjs": "^20.0.0-56c14a9.0",
     "text-encoding": "^0.7.0",
     "universal-authenticator-library": "0.1.0"

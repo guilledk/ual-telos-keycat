@@ -33,7 +33,6 @@ class KeycatAuthenticator extends Authenticator {
                     blockchain: {
                         name,
                         nodes,
-                        urlOrigin: 'http://localhost:3030',
                     },
                 });
             }
