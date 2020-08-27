@@ -8,6 +8,27 @@ const chainMap = {
     '1eaa0824707c8c16bd25145493bf062aecddfeb56c736f6ba6397f3195f33c9f': 'telos-testnet',
 };
 
+// example of chains structure (from host app)
+// const chains = [{
+//     chainId: process.env.NETWORK_CHAIN_ID,
+//     origin: process.env.TELOS_ORIGIN,
+//     rpcEndpoints: [{
+//         protocol: process.env.NETWORK_PROTOCOL,
+//         host: process.env.NETWORK_HOST,
+//         port: process.env.NETWORK_PORT
+//     }]
+//   }]
+
+// keycatMap structure = {
+//     'telos-testnet': new Keycat({
+//         blockchain: {
+//             name: 'telos-testnet',
+//             nodes: [rpcEndpoints],
+//             origin:
+//         }
+//     })
+// }
+
 class KeycatAuthenticator extends Authenticator {
     constructor(chains, options) {
         super(chains, options);
