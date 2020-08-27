@@ -629,9 +629,9 @@
     lodash "^4.17.11"
     to-fast-properties "^2.0.0"
 
-"@smontero/keycatjs@git://github.com/telosnetwork/telos-keycatjs.git":
+"@telosnetwork/telos-keycatjs@git://github.com/telosnetwork/telos-keycatjs.git#5670720":
   version "0.11.1-0"
-  resolved "git://github.com/telosnetwork/telos-keycatjs.git#6a1b0f8d1c2cbcc4784004832d9d1b09f2203f42"
+  resolved "git://github.com/telosnetwork/telos-keycatjs.git#5670720b082b5ab9f82d4027c03b105acea31e0a"
   dependencies:
     query-string "^6.5.0"
 

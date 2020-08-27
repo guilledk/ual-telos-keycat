@@ -21,7 +21,8 @@ class KeycatAuthenticator extends Authenticator {
     _getKeycatMap(chains) {
         const keycatMap = {};
         for (const chain of chains) {
-            const { chainId, rpcEndpoints } = chain;
+            const { chainId, rpcEndpoints, origin } = chain;
+            console.log('ual-telos-keycat chain is: ', chain);
             const name = chainMap[chainId];
             if (name) {
                 const nodes = [];
@@ -33,6 +34,7 @@ class KeycatAuthenticator extends Authenticator {
                     blockchain: {
                         name,
                         nodes,
+                        origin,
                     },
                 });
             }
