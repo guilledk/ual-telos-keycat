@@ -7,6 +7,7 @@ class KeycatUser extends User {
         publicKey,
         chainId,
         keycat,
+        rpc,
     }) {
         super();
         this.keys = [publicKey];
@@ -14,6 +15,7 @@ class KeycatUser extends User {
         this.permission = permission;
         this.chainId = chainId;
         this.keycat = keycat;
+        this.rpc = rpc;
     }
 
     /**

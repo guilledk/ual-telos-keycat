@@ -2,6 +2,7 @@ import { Authenticator, UALError, UALErrorType } from 'universal-authenticator-l
 import { Keycat } from '@telosnetwork/telos-keycatjs';
 import KeycatLogo from './KeycatLogo';
 import KeycatUser from './KeycatUser';
+import { JsonRpc } from 'eosjs';
 
 const chainMap = {
     '4667b205c6838ef70ff7988f6e8257e8be0e1284a2f59699054a018f743b1d11': 'telos',
@@ -16,6 +17,13 @@ class KeycatAuthenticator extends Authenticator {
         selectedChainId = selectedChainId || chains[0].chainId;
         this.keycatMap = this._getKeycatMap(chains);
         this.selectedChainId = selectedChainId;
+        this.rpc = opts.rpc || this._createRpc();
+    }
+
+    _createRpc() {
+        const selectedKeycatChain = this.keycatMap[this.selectedChainId];
+        const node = selectedKeycatChain.config.blockchain.nodes[0];
+        return new JsonRpc(node);
     }
 
     _getKeycatMap(chains) {
@@ -30,6 +38,7 @@ class KeycatAuthenticator extends Authenticator {
                     const { protocol, host, port } = rpcEndpoint;
                     nodes.push(`${protocol}://${host}:${port}`);
                 }
+
                 keycatMap[chainId] = new Keycat({
                     blockchain: {
                         name,
@@ -92,14 +101,14 @@ class KeycatAuthenticator extends Authenticator {
 
     getStyle() {
         return {
-            // An icon displayed to app users when selecting their authentication method
-            icon: KeycatLogo,
-            // Name displayed to app users
-            text: 'Keycat',
-            // Background color displayed to app users who select your authenticator
-            background: '#000000',
-            // Color of text used on top the `backgound` property above
-            textColor: '#FFFFFF',
+          // An icon displayed to app users when selecting their authentication method
+          icon: KeycatLogo,
+          // Name displayed to app users
+          text: "Telos Web",
+          // Background color displayed to app users who select your authenticator
+          background: "#571AFF",
+          // Color of text used on top the `backgound` property above
+          textColor: "#FFFFFF",
         };
     }
 
@@ -143,7 +152,7 @@ class KeycatAuthenticator extends Authenticator {
                     publicKey,
                     keycat: this.keycat,
                     chainId: this.selectedChainId,
-
+                    rpc: this.rpc
                 }),
             ];
         } catch (err) {
