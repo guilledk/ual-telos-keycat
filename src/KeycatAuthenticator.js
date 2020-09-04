@@ -1,13 +1,34 @@
 import { Authenticator, UALError, UALErrorType } from 'universal-authenticator-library';
 import { Keycat } from '@telosnetwork/telos-keycatjs';
+import { JsonRpc } from 'eosjs';
 import KeycatLogo from './KeycatLogo';
 import KeycatUser from './KeycatUser';
-import { JsonRpc } from 'eosjs';
 
 const chainMap = {
     '4667b205c6838ef70ff7988f6e8257e8be0e1284a2f59699054a018f743b1d11': 'telos',
     '1eaa0824707c8c16bd25145493bf062aecddfeb56c736f6ba6397f3195f33c9f': 'telos-testnet',
 };
+
+// example of chains structure (from host app)
+// const chains = [{
+//     chainId: process.env.NETWORK_CHAIN_ID,
+//     origin: process.env.TELOS_ORIGIN,
+//     rpcEndpoints: [{
+//         protocol: process.env.NETWORK_PROTOCOL,
+//         host: process.env.NETWORK_HOST,
+//         port: process.env.NETWORK_PORT
+//     }]
+//   }]
+
+// keycatMap structure = {
+//     'telos-testnet': new Keycat({
+//         blockchain: {
+//             name: 'telos-testnet',
+//             nodes: [rpcEndpoints],
+//             origin:
+//         }
+//     })
+// }
 
 class KeycatAuthenticator extends Authenticator {
     constructor(chains, options) {
@@ -101,14 +122,14 @@ class KeycatAuthenticator extends Authenticator {
 
     getStyle() {
         return {
-          // An icon displayed to app users when selecting their authentication method
-          icon: KeycatLogo,
-          // Name displayed to app users
-          text: "Telos Web",
-          // Background color displayed to app users who select your authenticator
-          background: "#571AFF",
-          // Color of text used on top the `backgound` property above
-          textColor: "#FFFFFF",
+            // An icon displayed to app users when selecting their authentication method
+            icon: KeycatLogo,
+            // Name displayed to app users
+            text: 'Telos Web',
+            // Background color displayed to app users who select your authenticator
+            background: '#571AFF',
+            // Color of text used on top the `backgound` property above
+            textColor: '#FFFFFF',
         };
     }
 
