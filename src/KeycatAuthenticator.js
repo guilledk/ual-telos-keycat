@@ -1,7 +1,7 @@
 import { Authenticator, UALError, UALErrorType } from 'universal-authenticator-library';
 import { Keycat } from '@telosnetwork/telos-keycatjs';
 import { JsonRpc } from 'eosjs';
-import TelosSignRoungLogo from './telos-sign-round-logo.png'
+import TelosSignRoungLogo from './telos-sign-simple-pen-logo.png'
 import KeycatUser from './KeycatUser';
 
 const chainMap = {
