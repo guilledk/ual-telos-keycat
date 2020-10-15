@@ -2,6 +2,7 @@ import { Authenticator, UALError, UALErrorType } from 'universal-authenticator-l
 import { Keycat } from '@telosnetwork/telos-keycatjs';
 import { JsonRpc } from 'eosjs';
 import KeycatLogo from './KeycatLogo';
+import TelosSignRoungLogo from './telos-sign-round-logo.png'
 import KeycatUser from './KeycatUser';
 
 const chainMap = {
@@ -123,9 +124,9 @@ class KeycatAuthenticator extends Authenticator {
     getStyle() {
         return {
             // An icon displayed to app users when selecting their authentication method
-            icon: KeycatLogo,
+            icon: TelosSignRoungLogo,
             // Name displayed to app users
-            text: 'Telos Web',
+            text: 'Telos Sign',
             // Background color displayed to app users who select your authenticator
             background: '#571AFF',
             // Color of text used on top the `backgound` property above
