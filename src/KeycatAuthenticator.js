@@ -1,7 +1,6 @@
 import { Authenticator, UALError, UALErrorType } from 'universal-authenticator-library';
 import { Keycat } from '@telosnetwork/telos-keycatjs';
 import { JsonRpc } from 'eosjs';
-import KeycatLogo from './KeycatLogo';
 import TelosSignRoungLogo from './telos-sign-round-logo.png'
 import KeycatUser from './KeycatUser';
 
