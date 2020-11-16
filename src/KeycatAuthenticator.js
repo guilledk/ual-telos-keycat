@@ -127,7 +127,7 @@ class KeycatAuthenticator extends Authenticator {
             // Name displayed to app users
             text: 'Telos Sign',
             // Background color displayed to app users who select your authenticator
-            background: '#571AFF',
+            background: '#030238',
             // Color of text used on top the `backgound` property above
             textColor: '#FFFFFF',
         };
