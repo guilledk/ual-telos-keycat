@@ -147,6 +147,12 @@ class KeycatAuthenticator extends Authenticator {
     async login() {
         try {
             const { accountName, permission, publicKey } = await this.keycat.signin();
+            window.localStorage.setItem('accountName', accountName);
+            window.localStorage.setItem('permission', permission);
+            window.localStorage.setItem('publicKey', publicKey);
+            const nowTimestamp = Math.floow(((new Date()).getTime()) / 1000);
+            const expiration = this.shouldInvalidateAfter() + nowTimestamp;
+            window.localStorage.setItem('expiration', expiration);
             return [
                 new KeycatUser({
                     accountName,
