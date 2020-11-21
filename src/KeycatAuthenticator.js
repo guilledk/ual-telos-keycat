@@ -146,13 +146,29 @@ class KeycatAuthenticator extends Authenticator {
      */
     async login() {
         try {
-            const { accountName, permission, publicKey } = await this.keycat.signin();
-            window.localStorage.setItem('accountName', accountName);
-            window.localStorage.setItem('permission', permission);
-            window.localStorage.setItem('publicKey', publicKey);
-            const nowTimestamp = Math.floow(((new Date()).getTime()) / 1000);
-            const expiration = this.shouldInvalidateAfter() + nowTimestamp;
-            window.localStorage.setItem('expiration', expiration);
+            let accountName;
+            let permission;
+            let publicKey;
+
+            const nowTimestamp = Math.floor(((new Date()).getTime()) / 1000);
+            accountName = window.localStorage.getItem('accountName');
+            permission = window.localStorage.getItem('permission');
+            publicKey = window.localStorage.getItem('publicKey');
+            let expiration = window.localStorage.getItem('expiration');
+
+            const isBeforeExpiration = parseInt(expiration || 0, 10) > nowTimestamp;
+            if (!(accountName && permission && publicKey && isBeforeExpiration)) {
+                const signinData = await this.keycat.signin();
+                accountName = signinData.accountName;
+                permission = signinData.permission;
+                publicKey = signinData.publicKey;
+                expiration = this.shouldInvalidateAfter() + nowTimestamp;
+                window.localStorage.setItem('expiration', expiration);
+                window.localStorage.setItem('accountName', accountName);
+                window.localStorage.setItem('permission', permission);
+                window.localStorage.setItem('publicKey', publicKey);
+            }
+
             return [
                 new KeycatUser({
                     accountName,
