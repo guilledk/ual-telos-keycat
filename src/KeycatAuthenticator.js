@@ -10,6 +10,7 @@ const chainMap = {
 };
 
 class KeycatAuthenticator extends Authenticator {
+
     constructor(chains, options) {
         super(chains, options);
         const opts = options || {};
@@ -18,6 +19,7 @@ class KeycatAuthenticator extends Authenticator {
         this.keycatMap = this._getKeycatMap(chains);
         this.selectedChainId = selectedChainId;
         this.rpc = opts.rpc || this._createRpc();
+        this.defaultInvalidateAfter = 604800;
     }
 
     _createRpc() {
@@ -166,6 +168,10 @@ class KeycatAuthenticator extends Authenticator {
      */
     async logout() {
         return true;
+    }
+
+    shouldInvalidateAfter() {
+        return this.defaultInvalidateAfter;
     }
 
     /**
