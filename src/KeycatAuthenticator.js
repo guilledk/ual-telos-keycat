@@ -189,6 +189,10 @@ class KeycatAuthenticator extends Authenticator {
      * Authenticator app's patterns.
      */
     async logout() {
+        window.localStorage.removeItem('accountName');
+        window.localStorage.removeItem('permission');
+        window.localStorage.removeItem('publicKey');
+        window.localStorage.removeItem('expiration');
         return true;
     }
 
