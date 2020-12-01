@@ -636,10 +636,10 @@
     lodash "^4.17.11"
     to-fast-properties "^2.0.0"
 
-"@telosnetwork/telos-keycatjs@0.11.3":
-  version "0.11.3"
-  resolved "https://registry.yarnpkg.com/@telosnetwork/telos-keycatjs/-/telos-keycatjs-0.11.3.tgz#db608237c05f5f248e52cb738b6a9ed2021d379c"
-  integrity sha512-dvHs6xr9SNmExWedspQolv2rp0n2xMKn2CJ4BqcY5cHDCKJuRykUbiDKp6vRqxbmlrimcKusSeiTDwDDd5rH/w==
+"@telosnetwork/telos-keycatjs@0.12.1":
+  version "0.12.1"
+  resolved "https://registry.yarnpkg.com/@telosnetwork/telos-keycatjs/-/telos-keycatjs-0.12.1.tgz#761e5fa51b8e7363d453914304a6a51022b635b2"
+  integrity sha512-idrc82tSUIYDoo6mpr157QdNZ15PK8KGqXfSTGhppJzaz7kNkNWzf6YLw30vfd4pDG5fo1NJ++iuYe8l/hZ8cQ==
   dependencies:
     query-string "^6.5.0"
 
