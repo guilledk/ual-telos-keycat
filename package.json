@@ -16,7 +16,7 @@
     "name": "Sebastian Montero"
   },
   "dependencies": {
-    "@telosnetwork/telos-keycatjs": "0.12.2",
+    "@telosnetwork/telos-keycatjs": "0.12.3",
     "eosjs": "^20.0.3",
     "text-encoding": "^0.7.0",
     "universal-authenticator-library": "0.1.0"
