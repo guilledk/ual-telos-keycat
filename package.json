@@ -2,18 +2,20 @@
   "name": "@telosnetwork/ual-telos-keycat",
   "version": "1.10.3",
   "description": "",
-  "main": "index.js",
+  "main": "dist/index.js",
   "repository": {
     "type": "git",
     "url": "git://github.com/telosnetwork/ual-telos-keycat"
   },
   "scripts": {
     "build": "babel src -d dist",
+    "clean-build": "rm -rf dist && yarn build",
+    "prepublish": "yarn clean-build",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "license": "MIT",
   "author": {
-    "name": "Sebastian Montero"
+    "name": "Telos Core Devs"
   },
   "dependencies": {
     "@telosnetwork/telos-keycatjs": "0.12.4",
