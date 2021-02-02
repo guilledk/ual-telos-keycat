@@ -11,7 +11,7 @@
     "build": "babel src -d dist",
     "clean-build": "rm -rf dist && yarn build",
     "prepublish": "yarn clean-build",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no testing configured\" && exit 0"
   },
   "license": "MIT",
   "author": {
