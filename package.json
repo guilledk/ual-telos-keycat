@@ -1,11 +1,11 @@
 {
-  "name": "@telosnetwork/ual-telos-keycat",
+  "name": "@guilledk/ual-telos-keycat",
   "version": "1.11.1",
   "description": "",
   "main": "index.js",
   "repository": {
     "type": "git",
-    "url": "git://github.com/telosnetwork/ual-telos-keycat"
+    "url": "git://github.com/guilledk/ual-telos-keycat"
   },
   "scripts": {
     "build": "babel src -d dist",

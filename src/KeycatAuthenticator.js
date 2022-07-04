@@ -12,6 +12,8 @@ const chainMap = {
   "4667b205c6838ef70ff7988f6e8257e8be0e1284a2f59699054a018f743b1d11": "telos",
   "1eaa0824707c8c16bd25145493bf062aecddfeb56c736f6ba6397f3195f33c9f":
     "telos-testnet",
+  "c4c5fcc7b6e5e7484eb6b609e755050ebba977c4c291a63aab42d94c0fb8c2cf":
+    "telos-local-testnet"
 };
 
 class KeycatAuthenticator extends Authenticator {
